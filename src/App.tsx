@@ -249,6 +249,7 @@ export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showRoute, setShowRoute] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState<any>(null);
+  const [selectedHomeDay, setSelectedHomeDay] = useState("all");
 
   const activeDay = itinerary.find(d => d.id === activeTab);
 
@@ -450,31 +451,78 @@ export default function App() {
                     </div>
                   </div>
 
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+                    <h3 className="text-2xl font-black text-[#4A4A4A]">Trip <span className="text-[#9F7AEA]">Overview</span></h3>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-black text-[#4A4A4A]/40 uppercase tracking-widest">Filter by Day:</span>
+                      <select 
+                        value={selectedHomeDay}
+                        onChange={(e) => setSelectedHomeDay(e.target.value)}
+                        className="appearance-none bg-[#D6BCFA]/10 border-2 border-[#D6BCFA]/20 rounded-2xl px-6 py-3 text-sm font-bold text-[#9F7AEA] focus:outline-none focus:border-[#9F7AEA] transition-all cursor-pointer min-w-[160px]"
+                      >
+                        <option value="all">All Days</option>
+                        {itinerary.map(day => (
+                          <option key={day.id} value={day.id}>{day.day}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {itinerary.map((day, i) => (
-                      <div key={i} className="bg-white p-6 rounded-[2rem] border border-[#4A4A4A]/5 shadow-sm hover:shadow-md transition-all">
-                        <p className="text-[10px] font-black text-[#9F7AEA] uppercase tracking-widest mb-2">{day.day}</p>
-                        <h4 className="text-lg font-bold mb-3">{day.theme}</h4>
-                        <div className="aspect-video rounded-2xl overflow-hidden mb-4">
-                          <img src={day.items[0].imageUrl} alt={day.day} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                        </div>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {day.items[0].tourismUrl && (
-                            <a href={day.items[0].tourismUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#B2E2F2]/10 text-[#B2E2F2] hover:bg-[#B2E2F2] hover:text-white transition-all">
-                              <Info size={14} />
-                            </a>
-                          )}
-                          {day.items[0].wikiUrl && (
-                            <a href={day.items[0].wikiUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#FDFD96]/20 text-[#4A4A4A]/40 hover:bg-[#FDFD96] hover:text-[#4A4A4A] transition-all">
-                              <Camera size={14} />
-                            </a>
+                    {itinerary
+                      .filter(day => selectedHomeDay === "all" || day.id === selectedHomeDay)
+                      .map((day, i) => (
+                      <div key={i} className="bg-white p-6 rounded-[2rem] border border-[#4A4A4A]/5 shadow-sm hover:shadow-md transition-all group/day">
+                        <div className="flex justify-between items-start mb-2">
+                          <p className="text-[10px] font-black text-[#9F7AEA] uppercase tracking-widest">{day.day}</p>
+                          {selectedHomeDay !== "all" && (
+                            <span className="text-[10px] font-black text-[#4A4A4A]/20 uppercase tracking-widest">Day {i + 1}</span>
                           )}
                         </div>
+                        <h4 className="text-lg font-bold mb-3 group-hover/day:text-[#9F7AEA] transition-colors">{day.theme}</h4>
+                        <div className="aspect-video rounded-2xl overflow-hidden mb-4 relative">
+                          <img src={day.items[0].imageUrl} alt={day.day} className="w-full h-full object-cover group-hover/day:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                          {selectedHomeDay !== "all" && (
+                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-black text-[#9F7AEA] shadow-sm">
+                              {day.items.length} Events
+                            </div>
+                          )}
+                        </div>
+
+                        {selectedHomeDay !== "all" ? (
+                          <div className="space-y-4 mb-6">
+                            {day.items.map((item, idx) => (
+                              <div key={idx} className="flex items-center gap-3 p-3 rounded-2xl bg-[#D6BCFA]/5 border border-[#D6BCFA]/10">
+                                <div className="w-8 h-8 rounded-xl bg-[#9F7AEA] text-white flex items-center justify-center text-[10px] font-black shrink-0">
+                                  {idx + 1}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-xs font-bold text-[#4A4A4A] truncate">{item.title}</p>
+                                  <p className="text-[10px] text-[#4A4A4A]/40 font-medium">{item.time}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {day.items[0].tourismUrl && (
+                              <a href={day.items[0].tourismUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#B2E2F2]/10 text-[#B2E2F2] hover:bg-[#B2E2F2] hover:text-white transition-all">
+                                <Info size={14} />
+                              </a>
+                            )}
+                            {day.items[0].wikiUrl && (
+                              <a href={day.items[0].wikiUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#FDFD96]/20 text-[#4A4A4A]/40 hover:bg-[#FDFD96] hover:text-[#4A4A4A] transition-all">
+                                <Camera size={14} />
+                              </a>
+                            )}
+                          </div>
+                        )}
+                        
                         <button 
                           onClick={() => setActiveTab(day.id)}
                           className="w-full py-3 rounded-xl bg-[#D6BCFA]/10 text-[#9F7AEA] text-xs font-black uppercase tracking-widest hover:bg-[#D6BCFA]/20 transition-all"
                         >
-                          View Day
+                          View Full Day
                         </button>
                       </div>
                     ))}
