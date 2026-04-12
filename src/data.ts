@@ -6,6 +6,8 @@ export interface ItineraryItem {
   details?: string[];
   imageUrl?: string;
   coordinates?: { lat: number; lng: number };
+  tourismUrl?: string;
+  wikiUrl?: string;
 }
 
 export interface DayPlan {
@@ -27,8 +29,10 @@ export const itinerary: DayPlan[] = [
         description: "Go early to beat the crowds and get the best photos of the thousands of torii gates.",
         mapUrl: "https://maps.google.com/?q=Fushimi+Inari+Taisha",
         details: ["Beat crowds + best photos", "Time here: 1.5–2 hrs (don't rush)"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Fushimi_Inari_taisha_torii_path.jpg/800px-Fushimi_Inari_taisha_torii_path.jpg",
-        coordinates: { lat: 34.9671, lng: 135.7727 }
+        imageUrl: "https://images.unsplash.com/photo-1624253321171-1be53e12f514?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.9671, lng: 135.7727 },
+        tourismUrl: "https://www.japan-guide.com/e/e3915.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha"
       },
       {
         time: "10:30 am",
@@ -36,24 +40,29 @@ export const itinerary: DayPlan[] = [
         description: "Explore the historic temple and walk down through the preserved old streets.",
         mapUrl: "https://maps.google.com/?q=Kiyomizu-dera",
         details: ["Walk down through old streets rather than rushing transport"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Kiyomizu-dera_Main_Hall_in_Kyoto.jpg/800px-Kiyomizu-dera_Main_Hall_in_Kyoto.jpg",
-        coordinates: { lat: 34.9949, lng: 135.7850 }
+        imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.9949, lng: 135.7850 },
+        tourismUrl: "https://www.japan-guide.com/e/e3901.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Kiyomizu-dera"
       },
       {
         time: "12:30 pm",
         title: "Lunch at Men-ya Inoichi",
         description: "A highly-rated ramen spot in Kyoto.",
         mapUrl: "https://maps.google.com/?q=Men-ya+Inoichi",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ramen_at_Inoichi%2C_Kyoto.jpg/800px-Ramen_at_Inoichi%2C_Kyoto.jpg",
-        coordinates: { lat: 35.0006, lng: 135.7667 }
+        imageUrl: "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.0006, lng: 135.7667 },
+        tourismUrl: "https://tabelog.com/en/kyoto/A2601/A260201/26022624/"
       },
       {
         time: "02:00 pm",
         title: "Gion Wander",
         description: "Take it slow in the geisha district. Coffee, snacks, and side streets.",
         mapUrl: "https://maps.google.com/?q=Gion",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Gion_at_night.jpg/800px-Gion_at_night.jpg",
-        coordinates: { lat: 35.0037, lng: 135.7785 }
+        imageUrl: "https://images.unsplash.com/photo-1578469645742-46cae010e5d3?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.0037, lng: 135.7785 },
+        tourismUrl: "https://www.japan-guide.com/e/e3902.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Gion"
       },
       {
         time: "03:30 pm",
@@ -61,8 +70,10 @@ export const itinerary: DayPlan[] = [
         description: "Travel to Kurama area for a tattoo-friendly public onsen experience.",
         mapUrl: "https://maps.google.com/?q=Kurama+area+onsen",
         details: ["Tattoos generally fine or coverable", "Separate male/female"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Kurama_Onsen_Outdoor_Bath.jpg/800px-Kurama_Onsen_Outdoor_Bath.jpg",
-        coordinates: { lat: 35.1186, lng: 135.7714 }
+        imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.1186, lng: 135.7714 },
+        tourismUrl: "https://www.kurama-onsen.co.jp/index_e.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Kurama-dera"
       }
     ]
   },
@@ -77,32 +88,39 @@ export const itinerary: DayPlan[] = [
         description: "A snack crawl through Osaka's famous 'Kitchen of Japan'.",
         mapUrl: "https://maps.google.com/?q=Kuromon+Market",
         details: ["Wagyu skewers", "Tuna", "Uni"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Kuromon_Ichiba_Market_Osaka.jpg/800px-Kuromon_Ichiba_Market_Osaka.jpg",
-        coordinates: { lat: 34.6654, lng: 135.5061 }
+        imageUrl: "https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6654, lng: 135.5061 },
+        tourismUrl: "https://kuromon.com/en/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Kuromon_Ichiba_Market"
       },
       {
         time: "01:00 pm",
         title: "Shinsaibashi / Amerikamura",
         description: "Best for walking, browsing, and random finds.",
         mapUrl: "https://maps.google.com/?q=Shinsaibashi",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Shinsaibashi-suji_Shopping_Street.jpg/800px-Shinsaibashi-suji_Shopping_Street.jpg",
-        coordinates: { lat: 34.6711, lng: 135.5014 }
+        imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6711, lng: 135.5014 },
+        tourismUrl: "https://www.japan-guide.com/e/e4002.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Shinsaibashi"
       },
       {
         time: "06:00 pm",
         title: "Booked Yakiniku Dinner",
         description: "Enjoy high-quality grilled meat at Yakiniku M Hozenji.",
         mapUrl: "https://maps.google.com/?q=Yakiniku+M+Hozenji",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Yakiniku_M_Hozenji_Hanare.jpg/800px-Yakiniku_M_Hozenji_Hanare.jpg",
-        coordinates: { lat: 34.6684, lng: 135.5028 }
+        imageUrl: "https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6684, lng: 135.5028 },
+        tourismUrl: "https://www.m-kyoto.jp/hozenji_hanare/"
       },
       {
         time: "08:00 pm",
         title: "Dotonbori + Bar Hopping",
         description: "The heart of Osaka's nightlife. Move around and don't get stuck in one place.",
         mapUrl: "https://maps.google.com/?q=Dotonbori",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Dotonbori_at_night.jpg/800px-Dotonbori_at_night.jpg",
-        coordinates: { lat: 34.6687, lng: 135.5013 }
+        imageUrl: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6687, lng: 135.5013 },
+        tourismUrl: "https://www.japan-guide.com/e/e4001.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Dotonbori"
       }
     ]
   },
@@ -116,24 +134,29 @@ export const itinerary: DayPlan[] = [
         title: "Shin-Osaka to Tokyo by Nozomi",
         description: "Aim to reach the station 20 mins early. Sit on the right for a Mt Fuji chance.",
         details: ["Right-hand side for Mt Fuji", "Forward large bags if possible"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Shinkansen_N700_series_at_Tokyo_Station.jpg/800px-Shinkansen_N700_series_at_Tokyo_Station.jpg",
-        coordinates: { lat: 34.7335, lng: 135.5001 }
+        imageUrl: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.7335, lng: 135.5001 },
+        tourismUrl: "https://www.japan-guide.com/e/e2018.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Shinkansen"
       },
       {
         time: "12:00 pm",
         title: "Hotel Check-in",
         description: "Hotel Groove Shinjuku.",
         mapUrl: "https://maps.google.com/?q=Hotel+Groove+Shinjuku",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Shinjuku_Toho_Building_201505.jpg/800px-Shinjuku_Toho_Building_201505.jpg",
-        coordinates: { lat: 35.6957, lng: 139.7022 }
+        imageUrl: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6957, lng: 139.7022 },
+        tourismUrl: "https://www.panpacific.com/en/hotels-and-resorts/hotel-groove-shinjuku.html"
       },
       {
         time: "04:00 pm",
         title: "Shibuya Crossing",
         description: "Experience the world's busiest intersection.",
         mapUrl: "https://maps.google.com/?q=Shibuya+Crossing",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Shibuya_Crossing%2C_Tokyo%2C_Japan.jpg/800px-Shibuya_Crossing%2C_Tokyo%2C_Japan.jpg",
-        coordinates: { lat: 35.6595, lng: 139.7005 }
+        imageUrl: "https://images.unsplash.com/photo-1555681962-37b0c334ad62?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6595, lng: 139.7005 },
+        tourismUrl: "https://www.japan-guide.com/e/e3007.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Shibuya_Crossing"
       },
       {
         time: "05:30 pm",
@@ -141,24 +164,28 @@ export const itinerary: DayPlan[] = [
         description: "Sunset slot for the best views in Tokyo. Entrance on 14th floor.",
         mapUrl: "https://maps.google.com/?q=Shibuya+Sky",
         details: ["Book sunset slot", "Entrance on 14th floor of Shibuya Scramble Square"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shibuya_Scramble_Square_2020.jpg/800px-Shibuya_Scramble_Square_2020.jpg",
-        coordinates: { lat: 35.6585, lng: 139.7017 }
+        imageUrl: "https://images.unsplash.com/photo-1536098565842-0310f2643f63?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6585, lng: 139.7017 },
+        tourismUrl: "https://www.shibuya-scramble-square.com/sky/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Shibuya_Scramble_Square"
       },
       {
         time: "07:30 pm",
         title: "Dinner at Uobei Shibuya",
         description: "High-tech conveyor belt sushi.",
         mapUrl: "https://maps.google.com/?q=Uobei+Shibuya",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Uobei_Shibuya_Dogenzaka.jpg/800px-Uobei_Shibuya_Dogenzaka.jpg",
-        coordinates: { lat: 35.6598, lng: 139.6981 }
+        imageUrl: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6598, lng: 139.6981 },
+        tourismUrl: "https://www.genkisushi.co.jp/en/"
       },
       {
         time: "09:00 pm",
         title: "Drinks at SG Club",
         description: "A world-class cocktail bar.",
         mapUrl: "https://maps.google.com/?q=SG+Club+Tokyo",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_SG_Club_Tokyo.jpg/800px-The_SG_Club_Tokyo.jpg",
-        coordinates: { lat: 35.6635, lng: 139.7002 }
+        imageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6635, lng: 139.7002 },
+        tourismUrl: "https://sg-management.jp/"
       }
     ]
   },
@@ -172,24 +199,29 @@ export const itinerary: DayPlan[] = [
         title: "Meiji Shrine",
         description: "A peaceful forest shrine in the middle of the city.",
         mapUrl: "https://maps.google.com/?q=Meiji+Shrine",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Meiji_Jingu_Shrine_Torii.jpg/800px-Meiji_Jingu_Shrine_Torii.jpg",
-        coordinates: { lat: 35.6764, lng: 139.6993 }
+        imageUrl: "https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6764, lng: 139.6993 },
+        tourismUrl: "https://www.japan-guide.com/e/e3002.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Meiji_Shrine"
       },
       {
         time: "Early Afternoon",
         title: "Harajuku / Omotesando",
         description: "Fashion, street food, and unique boutiques.",
         mapUrl: "https://maps.google.com/?q=Harajuku",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Takeshita_Street_Harajuku_Tokyo.jpg/800px-Takeshita_Street_Harajuku_Tokyo.jpg",
-        coordinates: { lat: 35.6715, lng: 139.7030 }
+        imageUrl: "https://images.unsplash.com/photo-1506351421178-63b52a2d25a2?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6715, lng: 139.7030 },
+        tourismUrl: "https://www.japan-guide.com/e/e3006.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Harajuku"
       },
       {
         time: "05:00 pm",
         title: "Pre-game Food: Afuri Harajuku",
         description: "Famous for their Yuzu Shio Ramen.",
         mapUrl: "https://maps.google.com/?q=Afuri+Harajuku",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Afuri_Ramen_Harajuku.jpg/800px-Afuri_Ramen_Harajuku.jpg",
-        coordinates: { lat: 35.6725, lng: 139.7042 }
+        imageUrl: "https://images.unsplash.com/photo-1557872246-7a797e73bd35?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6725, lng: 139.7042 },
+        tourismUrl: "https://afuri.com/english/"
       },
       {
         time: "06:00 pm",
@@ -197,16 +229,20 @@ export const itinerary: DayPlan[] = [
         description: "Experience Japanese baseball culture. 5-min walk from Gaiemmae Station.",
         mapUrl: "https://maps.google.com/?q=Meiji+Jingu+Stadium",
         details: ["Buy beers from the girls", "Join the chants", "5-min walk from Gaiemmae Station"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Meiji_Jingu_Stadium_2014.jpg/800px-Meiji_Jingu_Stadium_2014.jpg",
-        coordinates: { lat: 35.6743, lng: 139.7171 }
+        imageUrl: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6743, lng: 139.7171 },
+        tourismUrl: "http://www.jingu-stadium.com/english/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Meiji_Jingu_Stadium"
       },
       {
         time: "09:30 pm",
         title: "Drinks in Shinjuku",
         description: "Omoide Yokocho or Golden Gai near the hotel.",
         mapUrl: "https://maps.google.com/?q=Omoide+Yokocho",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Omoide_Yokocho_Shinjuku.jpg/800px-Omoide_Yokocho_Shinjuku.jpg",
-        coordinates: { lat: 35.6931, lng: 139.6997 }
+        imageUrl: "https://images.unsplash.com/photo-1590273466070-40c466b4432d?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6931, lng: 139.6997 },
+        tourismUrl: "https://shinjuku-omoide.com/english/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Omoide_Yokoch%C5%8D"
       }
     ]
   },
@@ -220,32 +256,39 @@ export const itinerary: DayPlan[] = [
         title: "Senso-ji",
         description: "Tokyo's oldest temple. Go early.",
         mapUrl: "https://maps.google.com/?q=Senso-ji",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Senso-ji_Temple_at_Night.jpg/800px-Senso-ji_Temple_at_Night.jpg",
-        coordinates: { lat: 35.7148, lng: 139.7967 }
+        imageUrl: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.7148, lng: 139.7967 },
+        tourismUrl: "https://www.japan-guide.com/e/e3001.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Sens%C5%8D-ji"
       },
       {
         time: "10:30 am",
         title: "Asakusa Explore",
         description: "Traditional shops and atmosphere.",
         mapUrl: "https://maps.google.com/?q=Asakusa",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Nakamise-dori_Asakusa.jpg/800px-Nakamise-dori_Asakusa.jpg",
-        coordinates: { lat: 35.7118, lng: 139.7965 }
+        imageUrl: "https://images.unsplash.com/photo-1584464431734-793549667793?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.7118, lng: 139.7965 },
+        tourismUrl: "https://www.japan-guide.com/e/e3004.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Asakusa"
       },
       {
         time: "12:30 pm",
         title: "Lunch: Daikokuya Tempura",
         description: "Classic tempura spot.",
         mapUrl: "https://maps.google.com/?q=Daikokuya+Tempura",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Daikokuya_Tempura_Asakusa.jpg/800px-Daikokuya_Tempura_Asakusa.jpg",
-        coordinates: { lat: 35.7125, lng: 139.7958 }
+        imageUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.7125, lng: 139.7958 },
+        tourismUrl: "http://www.tempura.co.jp/english/"
       },
       {
         time: "03:00 pm",
         title: "Akihabara",
         description: "Arcades, electronics, and anime culture.",
         mapUrl: "https://maps.google.com/?q=Akihabara",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akihabara_Electric_Town_at_Night.jpg/800px-Akihabara_Electric_Town_at_Night.jpg",
-        coordinates: { lat: 35.6984, lng: 139.7731 }
+        imageUrl: "https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6984, lng: 139.7731 },
+        tourismUrl: "https://www.japan-guide.com/e/e3003.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Akihabara"
       },
       {
         time: "09:00 pm",
@@ -253,8 +296,9 @@ export const itinerary: DayPlan[] = [
         description: "Start at Bar Benfiddich, then drift through Kabukicho.",
         mapUrl: "https://maps.google.com/?q=Bar+Benfiddich",
         details: ["No strict plan — best night of trip", "Jump bar to bar", "Start near hotel, then drift"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Kabukicho_at_night.jpg/800px-Kabukicho_at_night.jpg",
-        coordinates: { lat: 35.6938, lng: 139.7035 }
+        imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6938, lng: 139.7035 },
+        tourismUrl: "https://ameblo.jp/hiroyasu-kayama/"
       }
     ]
   },
@@ -269,23 +313,29 @@ export const itinerary: DayPlan[] = [
         description: "Immersive digital art experience. Book the first session.",
         mapUrl: "https://maps.google.com/?q=teamLab+Planets",
         details: ["1 min walk from Shin-Toyosu Station", "Book first session", "Walkable from Toyosu Station"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/TeamLab_Planets_Tokyo.jpg/800px-TeamLab_Planets_Tokyo.jpg",
-        coordinates: { lat: 35.6491, lng: 139.7898 }
+        imageUrl: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6491, lng: 139.7898 },
+        tourismUrl: "https://planets.teamlab.art/tokyo/",
+        wikiUrl: "https://en.wikipedia.org/wiki/TeamLab"
       },
       {
         time: "12:00 pm",
         title: "Tsukiji Outer Market Lunch",
         description: "Fresh seafood for the final meal.",
         mapUrl: "https://maps.google.com/?q=Tsukiji+Outer+Market",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tsukiji_Outer_Market_2017.jpg/800px-Tsukiji_Outer_Market_2017.jpg",
-        coordinates: { lat: 35.6655, lng: 139.7707 }
+        imageUrl: "https://images.unsplash.com/photo-1534251369789-5067c8b8602a?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6655, lng: 139.7707 },
+        tourismUrl: "https://www.japan-guide.com/e/e3021.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Tsukiji_Outer_Market"
       },
       {
         time: "02:00 pm",
         title: "Final Wander",
         description: "Ginza or Shibuya for last-minute shopping.",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ginza_at_night.jpg/800px-Ginza_at_night.jpg",
-        coordinates: { lat: 35.6717, lng: 139.7650 }
+        imageUrl: "https://images.unsplash.com/photo-1480796275306-24d9942a14fe?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.6717, lng: 139.7650 },
+        tourismUrl: "https://www.japan-guide.com/e/e3005.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Ginza"
       },
       {
         time: "06:30 pm",
@@ -293,8 +343,10 @@ export const itinerary: DayPlan[] = [
         description: "Flight at 22:45. Taxi or train via central Tokyo.",
         mapUrl: "https://maps.google.com/?q=Haneda+Airport+Terminal+2",
         details: ["Flight at 22:45", "Taxi or train to Haneda", "JR ticket services on Monorail side"],
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Haneda_Airport_Terminal_2_International_Departure_Hall.jpg/800px-Haneda_Airport_Terminal_2_International_Departure_Hall.jpg",
-        coordinates: { lat: 35.5494, lng: 139.7798 }
+        imageUrl: "https://images.unsplash.com/photo-1570160897040-30430ef2015a?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 35.5494, lng: 139.7798 },
+        tourismUrl: "https://tokyo-haneda.com/en/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Haneda_Airport"
       }
     ]
   }

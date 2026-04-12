@@ -86,9 +86,37 @@ const TimelineItem: React.FC<{ item: ItineraryItem; index: number }> = ({ item, 
         >
           <div className="flex justify-between items-start gap-4">
             <div className="flex-1">
-              <h3 className="text-xl font-bold tracking-tight text-[#4A4A4A] mb-2 group-hover/card:text-[#9F7AEA] transition-colors">
-                {item.title}
-              </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <h3 className="text-xl font-bold tracking-tight text-[#4A4A4A] group-hover/card:text-[#9F7AEA] transition-colors">
+                  {item.title}
+                </h3>
+                <div className="flex items-center gap-2">
+                  {item.tourismUrl && (
+                    <a 
+                      href={item.tourismUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-1.5 rounded-lg bg-[#B2E2F2]/10 text-[#B2E2F2] hover:bg-[#B2E2F2] hover:text-white transition-all"
+                      title="Tourism Website"
+                    >
+                      <Info size={14} />
+                    </a>
+                  )}
+                  {item.wikiUrl && (
+                    <a 
+                      href={item.wikiUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-1.5 rounded-lg bg-[#FDFD96]/20 text-[#4A4A4A]/40 hover:bg-[#FDFD96] hover:text-[#4A4A4A] transition-all"
+                      title="Wiki / Photos"
+                    >
+                      <Camera size={14} />
+                    </a>
+                  )}
+                </div>
+              </div>
               <p className="text-[#4A4A4A]/70 text-sm leading-relaxed">
                 {item.description}
               </p>
@@ -132,18 +160,46 @@ const TimelineItem: React.FC<{ item: ItineraryItem; index: number }> = ({ item, 
                     </div>
                   )}
 
-                  {item.mapUrl && (
-                    <a 
-                      href={item.mapUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#9F7AEA] text-white text-xs font-bold hover:bg-[#805AD5] transition-all shadow-lg shadow-[#9F7AEA]/30 group/link"
-                    >
-                      <MapPin size={14} />
-                      Open in Google Maps
-                      <ExternalLink size={12} className="opacity-0 group-hover/link:opacity-100 transition-all -translate-x-1 group-hover/link:translate-x-0" />
-                    </a>
-                  )}
+                  <div className="flex flex-wrap gap-3">
+                    {item.mapUrl && (
+                      <a 
+                        href={item.mapUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#9F7AEA] text-white text-xs font-bold hover:bg-[#805AD5] transition-all shadow-lg shadow-[#9F7AEA]/30 group/link"
+                      >
+                        <MapPin size={14} />
+                        Google Maps
+                        <ExternalLink size={12} className="opacity-0 group-hover/link:opacity-100 transition-all -translate-x-1 group-hover/link:translate-x-0" />
+                      </a>
+                    )}
+
+                    {item.tourismUrl && (
+                      <a 
+                        href={item.tourismUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#B2E2F2] text-white text-xs font-bold hover:bg-[#90CDF4] transition-all shadow-lg shadow-[#B2E2F2]/30 group/link"
+                      >
+                        <Info size={14} />
+                        Tourism Info
+                        <ExternalLink size={12} className="opacity-0 group-hover/link:opacity-100 transition-all -translate-x-1 group-hover/link:translate-x-0" />
+                      </a>
+                    )}
+
+                    {item.wikiUrl && (
+                      <a 
+                        href={item.wikiUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#FDFD96] text-[#4A4A4A] text-xs font-bold hover:bg-[#FDFD96]/80 transition-all shadow-lg shadow-[#FDFD96]/30 group/link"
+                      >
+                        <Camera size={14} />
+                        Wiki / Photos
+                        <ExternalLink size={12} className="opacity-0 group-hover/link:opacity-100 transition-all -translate-x-1 group-hover/link:translate-x-0" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -192,6 +248,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showRoute, setShowRoute] = useState(false);
+  const [selectedMarker, setSelectedMarker] = useState<any>(null);
 
   const activeDay = itinerary.find(d => d.id === activeTab);
 
@@ -330,10 +387,46 @@ export default function App() {
                           key={i}
                           anchor={[dest.coordinates!.lat, dest.coordinates!.lng]} 
                           payload={dest}
-                          onClick={({ payload }) => alert(`${payload.day}: ${payload.title}`)}
+                          onClick={({ payload }) => setSelectedMarker(payload)}
                         />
                       ))}
                     </Map>
+
+                    <AnimatePresence>
+                      {selectedMarker && (
+                        <motion.div 
+                          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 20, scale: 0.9 }}
+                          className="absolute top-8 left-8 right-8 z-30 bg-white/95 backdrop-blur-xl p-6 rounded-[2.5rem] border border-[#9F7AEA]/20 shadow-2xl flex flex-col sm:flex-row gap-6 items-center"
+                        >
+                          <div className="w-full sm:w-32 h-24 rounded-2xl overflow-hidden shrink-0 shadow-md">
+                            <img src={selectedMarker.imageUrl} alt={selectedMarker.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          </div>
+                          <div className="flex-1 text-center sm:text-left">
+                            <p className="text-[10px] font-black text-[#9F7AEA] uppercase tracking-widest mb-1">{selectedMarker.day}</p>
+                            <h3 className="text-xl font-bold text-[#4A4A4A] mb-2">{selectedMarker.title}</h3>
+                            <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                              {selectedMarker.tourismUrl && (
+                                <a href={selectedMarker.tourismUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-lg bg-[#B2E2F2]/10 text-[#B2E2F2] text-[10px] font-bold hover:bg-[#B2E2F2] hover:text-white transition-all">Tourism Info</a>
+                              )}
+                              {selectedMarker.wikiUrl && (
+                                <a href={selectedMarker.wikiUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-lg bg-[#FDFD96]/20 text-[#4A4A4A]/60 text-[10px] font-bold hover:bg-[#FDFD96] hover:text-[#4A4A4A] transition-all">Wiki / Photos</a>
+                              )}
+                              {selectedMarker.mapUrl && (
+                                <a href={selectedMarker.mapUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-lg bg-[#9F7AEA]/10 text-[#9F7AEA] text-[10px] font-bold hover:bg-[#9F7AEA] hover:text-white transition-all">Google Maps</a>
+                              )}
+                            </div>
+                          </div>
+                          <button 
+                            onClick={() => setSelectedMarker(null)}
+                            className="p-2 rounded-full bg-[#4A4A4A]/5 text-[#4A4A4A]/40 hover:bg-[#4A4A4A]/10 hover:text-[#4A4A4A] transition-all"
+                          >
+                            <X size={20} />
+                          </button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                     <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-[#4A4A4A]/5 shadow-xl flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-[#9F7AEA] flex items-center justify-center text-white">
@@ -364,6 +457,18 @@ export default function App() {
                         <h4 className="text-lg font-bold mb-3">{day.theme}</h4>
                         <div className="aspect-video rounded-2xl overflow-hidden mb-4">
                           <img src={day.items[0].imageUrl} alt={day.day} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {day.items[0].tourismUrl && (
+                            <a href={day.items[0].tourismUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#B2E2F2]/10 text-[#B2E2F2] hover:bg-[#B2E2F2] hover:text-white transition-all">
+                              <Info size={14} />
+                            </a>
+                          )}
+                          {day.items[0].wikiUrl && (
+                            <a href={day.items[0].wikiUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#FDFD96]/20 text-[#4A4A4A]/40 hover:bg-[#FDFD96] hover:text-[#4A4A4A] transition-all">
+                              <Camera size={14} />
+                            </a>
+                          )}
                         </div>
                         <button 
                           onClick={() => setActiveTab(day.id)}
