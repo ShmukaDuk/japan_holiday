@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Calendar, 
@@ -26,14 +26,14 @@ import {
 } from "lucide-react";
 import { itinerary, reservationStrategy, DayPlan, ItineraryItem } from "./data";
 
-const NavItem = ({ 
-  day, 
-  isActive, 
-  onClick 
-}: { 
+const NavItem: React.FC<{ 
   day: DayPlan | { id: string, day: string, theme: string }; 
   isActive: boolean; 
   onClick: () => void;
+}> = ({ 
+  day, 
+  isActive, 
+  onClick 
 }) => (
   <button
     onClick={onClick}
@@ -51,7 +51,7 @@ const NavItem = ({
   </button>
 );
 
-const TimelineItem = ({ item, index }: { item: ItineraryItem; index: number }) => {
+const TimelineItem: React.FC<{ item: ItineraryItem; index: number }> = ({ item, index }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
