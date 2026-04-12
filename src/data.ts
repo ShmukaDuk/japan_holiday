@@ -143,6 +143,22 @@ export const itinerary: DayPlan[] = [
         details: ["Book sunset slot", "Entrance on 14th floor of Shibuya Scramble Square"],
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shibuya_Scramble_Square_2020.jpg/800px-Shibuya_Scramble_Square_2020.jpg",
         coordinates: { lat: 35.6585, lng: 139.7017 }
+      },
+      {
+        time: "07:30 pm",
+        title: "Dinner at Uobei Shibuya",
+        description: "High-tech conveyor belt sushi.",
+        mapUrl: "https://maps.google.com/?q=Uobei+Shibuya",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Uobei_Shibuya_Dogenzaka.jpg/800px-Uobei_Shibuya_Dogenzaka.jpg",
+        coordinates: { lat: 35.6598, lng: 139.6981 }
+      },
+      {
+        time: "09:00 pm",
+        title: "Drinks at SG Club",
+        description: "A world-class cocktail bar.",
+        mapUrl: "https://maps.google.com/?q=SG+Club+Tokyo",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/The_SG_Club_Tokyo.jpg/800px-The_SG_Club_Tokyo.jpg",
+        coordinates: { lat: 35.6635, lng: 139.7002 }
       }
     ]
   },
@@ -168,13 +184,29 @@ export const itinerary: DayPlan[] = [
         coordinates: { lat: 35.6715, lng: 139.7030 }
       },
       {
+        time: "05:00 pm",
+        title: "Pre-game Food: Afuri Harajuku",
+        description: "Famous for their Yuzu Shio Ramen.",
+        mapUrl: "https://maps.google.com/?q=Afuri+Harajuku",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Afuri_Ramen_Harajuku.jpg/800px-Afuri_Ramen_Harajuku.jpg",
+        coordinates: { lat: 35.6725, lng: 139.7042 }
+      },
+      {
         time: "06:00 pm",
         title: "Game: Meiji Jingu Stadium",
         description: "Experience Japanese baseball culture. 5-min walk from Gaiemmae Station.",
         mapUrl: "https://maps.google.com/?q=Meiji+Jingu+Stadium",
-        details: ["Buy beers from the girls", "Join the chants"],
+        details: ["Buy beers from the girls", "Join the chants", "5-min walk from Gaiemmae Station"],
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Meiji_Jingu_Stadium_2014.jpg/800px-Meiji_Jingu_Stadium_2014.jpg",
         coordinates: { lat: 35.6743, lng: 139.7171 }
+      },
+      {
+        time: "09:30 pm",
+        title: "Drinks in Shinjuku",
+        description: "Omoide Yokocho or Golden Gai near the hotel.",
+        mapUrl: "https://maps.google.com/?q=Omoide+Yokocho",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Omoide_Yokocho_Shinjuku.jpg/800px-Omoide_Yokocho_Shinjuku.jpg",
+        coordinates: { lat: 35.6931, lng: 139.6997 }
       }
     ]
   },
@@ -192,12 +224,37 @@ export const itinerary: DayPlan[] = [
         coordinates: { lat: 35.7148, lng: 139.7967 }
       },
       {
+        time: "10:30 am",
+        title: "Asakusa Explore",
+        description: "Traditional shops and atmosphere.",
+        mapUrl: "https://maps.google.com/?q=Asakusa",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Nakamise-dori_Asakusa.jpg/800px-Nakamise-dori_Asakusa.jpg",
+        coordinates: { lat: 35.7118, lng: 139.7965 }
+      },
+      {
+        time: "12:30 pm",
+        title: "Lunch: Daikokuya Tempura",
+        description: "Classic tempura spot.",
+        mapUrl: "https://maps.google.com/?q=Daikokuya+Tempura",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Daikokuya_Tempura_Asakusa.jpg/800px-Daikokuya_Tempura_Asakusa.jpg",
+        coordinates: { lat: 35.7125, lng: 139.7958 }
+      },
+      {
         time: "03:00 pm",
         title: "Akihabara",
         description: "Arcades, electronics, and anime culture.",
         mapUrl: "https://maps.google.com/?q=Akihabara",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akihabara_Electric_Town_at_Night.jpg/800px-Akihabara_Electric_Town_at_Night.jpg",
         coordinates: { lat: 35.6984, lng: 139.7731 }
+      },
+      {
+        time: "09:00 pm",
+        title: "Big Night in Shinjuku",
+        description: "Start at Bar Benfiddich, then drift through Kabukicho.",
+        mapUrl: "https://maps.google.com/?q=Bar+Benfiddich",
+        details: ["No strict plan — best night of trip", "Jump bar to bar", "Start near hotel, then drift"],
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Kabukicho_at_night.jpg/800px-Kabukicho_at_night.jpg",
+        coordinates: { lat: 35.6938, lng: 139.7035 }
       }
     ]
   },
@@ -211,7 +268,7 @@ export const itinerary: DayPlan[] = [
         title: "teamLab Planets",
         description: "Immersive digital art experience. Book the first session.",
         mapUrl: "https://maps.google.com/?q=teamLab+Planets",
-        details: ["1 min walk from Shin-Toyosu Station", "Book first session"],
+        details: ["1 min walk from Shin-Toyosu Station", "Book first session", "Walkable from Toyosu Station"],
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/TeamLab_Planets_Tokyo.jpg/800px-TeamLab_Planets_Tokyo.jpg",
         coordinates: { lat: 35.6491, lng: 139.7898 }
       },
@@ -222,6 +279,22 @@ export const itinerary: DayPlan[] = [
         mapUrl: "https://maps.google.com/?q=Tsukiji+Outer+Market",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tsukiji_Outer_Market_2017.jpg/800px-Tsukiji_Outer_Market_2017.jpg",
         coordinates: { lat: 35.6655, lng: 139.7707 }
+      },
+      {
+        time: "02:00 pm",
+        title: "Final Wander",
+        description: "Ginza or Shibuya for last-minute shopping.",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ginza_at_night.jpg/800px-Ginza_at_night.jpg",
+        coordinates: { lat: 35.6717, lng: 139.7650 }
+      },
+      {
+        time: "06:30 pm",
+        title: "Leave for Haneda Terminal 2",
+        description: "Flight at 22:45. Taxi or train via central Tokyo.",
+        mapUrl: "https://maps.google.com/?q=Haneda+Airport+Terminal+2",
+        details: ["Flight at 22:45", "Taxi or train to Haneda", "JR ticket services on Monorail side"],
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Haneda_Airport_Terminal_2_International_Departure_Hall.jpg/800px-Haneda_Airport_Terminal_2_International_Departure_Hall.jpg",
+        coordinates: { lat: 35.5494, lng: 139.7798 }
       }
     ]
   }
