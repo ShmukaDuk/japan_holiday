@@ -19,7 +19,8 @@ import {
   Zap,
   Home,
   Navigation,
-  Camera
+  Camera,
+  BookOpen
 } from "lucide-react";
 import { Map, Marker, ZoomControl } from "pigeon-maps";
 import { itinerary, reservationStrategy, DayPlan, ItineraryItem } from "./data";
@@ -157,6 +158,15 @@ const TimelineItem: React.FC<{ item: ItineraryItem; index: number }> = ({ item, 
                           </li>
                         ))}
                       </ul>
+                    </div>
+                  )}
+
+                  {item.history && (
+                    <div className="space-y-3">
+                      <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#9F7AEA] font-black">History & Context</h4>
+                      <p className="text-sm text-[#4A4A4A]/80 leading-relaxed bg-[#FDFD96]/20 p-4 rounded-2xl border border-[#FDFD96]/30">
+                        {item.history}
+                      </p>
                     </div>
                   )}
 
@@ -317,6 +327,15 @@ export default function App() {
               isActive={activeTab === "strategy"}
               onClick={() => { setActiveTab("strategy"); setIsSidebarOpen(false); }}
               icon={<Navigation size={18} />}
+            />
+
+            <NavItem 
+              id="history"
+              label="History Guide"
+              theme="Site Summaries"
+              isActive={activeTab === "history"}
+              onClick={() => { setActiveTab("history"); setIsSidebarOpen(false); }}
+              icon={<BookOpen size={18} />}
             />
 
             <div className="h-px bg-[#4A4A4A]/5 my-2 mx-4" />
@@ -628,6 +647,55 @@ export default function App() {
                         ))}
                       </div>
                     </div>
+                  </div>
+                </div>
+              ) : activeTab === "history" ? (
+                <div className="space-y-12">
+                  <header className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FDFD96]/20 text-[#4A4A4A]/60 text-[10px] uppercase tracking-[0.2em] font-black">
+                      <BookOpen size={12} />
+                      History & Context
+                    </div>
+                    <h2 className="text-5xl lg:text-7xl font-black tracking-tighter text-[#4A4A4A]">The <span className="text-[#9F7AEA]">Backstory</span></h2>
+                    <p className="text-[#4A4A4A]/60 text-lg max-w-2xl font-medium leading-relaxed">
+                      A summary of the historical significance and stories behind each destination on your trip.
+                    </p>
+                  </header>
+
+                  <div className="space-y-16">
+                    {itinerary.map((day) => (
+                      <div key={day.id} className="space-y-8">
+                        <div className="flex items-center gap-4">
+                          <div className="h-px flex-1 bg-[#4A4A4A]/5" />
+                          <h3 className="text-sm font-black text-[#9F7AEA] uppercase tracking-[0.3em]">{day.day}</h3>
+                          <div className="h-px flex-1 bg-[#4A4A4A]/5" />
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {day.items.map((item, idx) => (
+                            <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-[#4A4A4A]/5 shadow-sm hover:shadow-xl hover:shadow-[#9F7AEA]/5 transition-all duration-500 group">
+                              <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-[#D6BCFA]/10 flex items-center justify-center text-[#9F7AEA] group-hover:bg-[#9F7AEA] group-hover:text-white transition-all duration-500">
+                                  <span className="text-lg font-black">{idx + 1}</span>
+                                </div>
+                                <h4 className="text-xl font-bold text-[#4A4A4A]">{item.title}</h4>
+                              </div>
+                              <div className="space-y-4">
+                                <p className="text-sm text-[#4A4A4A]/60 font-medium leading-relaxed italic border-l-4 border-[#D6BCFA] pl-4">
+                                  {item.description}
+                                </p>
+                                {item.history ? (
+                                  <p className="text-sm text-[#4A4A4A]/80 leading-relaxed">
+                                    {item.history}
+                                  </p>
+                                ) : (
+                                  <p className="text-xs text-[#4A4A4A]/30 italic">History coming soon...</p>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ) : (

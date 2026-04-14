@@ -8,6 +8,7 @@ export interface ItineraryItem {
   coordinates?: { lat: number; lng: number };
   tourismUrl?: string;
   wikiUrl?: string;
+  history?: string;
 }
 
 export interface DayPlan {
@@ -32,7 +33,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1624253321171-1be53e12f514?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.9671, lng: 135.7727 },
         tourismUrl: "https://www.japan-guide.com/e/e3915.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha"
+        wikiUrl: "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+        history: "Founded in 711 AD, Fushimi Inari is the head shrine of the god Inari. The torii gates are donated by businesses as Inari is seen as the patron of business and merchants."
       },
       {
         time: "10:30 am",
@@ -43,7 +45,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.9949, lng: 135.7850 },
         tourismUrl: "https://www.japan-guide.com/e/e3901.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Kiyomizu-dera"
+        wikiUrl: "https://en.wikipedia.org/wiki/Kiyomizu-dera",
+        history: "Kiyomizu-dera was founded in 778 AD. The current buildings were constructed in 1633. The temple takes its name from the waterfall within the complex, which runs off the nearby hills."
       },
       {
         time: "12:30 pm",
@@ -62,7 +65,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1578469645742-46cae010e5d3?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.0037, lng: 135.7785 },
         tourismUrl: "https://www.japan-guide.com/e/e3902.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Gion"
+        wikiUrl: "https://en.wikipedia.org/wiki/Gion",
+        history: "Gion developed as a 'monzen-machi' (town in front of a gate) for Yasaka Shrine. By the 18th century, it became Kyoto's most exclusive geisha district."
       },
       {
         time: "03:30 pm",
@@ -91,7 +95,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1621980303808-4903328229b1?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6613, lng: 135.4964 },
         tourismUrl: "https://nambayasaka.jp/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Namba_Yasaka_Shrine"
+        wikiUrl: "https://en.wikipedia.org/wiki/Namba_Yasaka_Shrine",
+        history: "While the shrine's origins are ancient, the famous lion head stage was built in 1974. It stands 12 meters tall and is a symbol of Namba's unique character."
       },
       {
         time: "11:00 am",
@@ -102,7 +107,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6715, lng: 135.4987 },
         tourismUrl: "https://magia.tokyo/shop/shinsaibashi",
-        wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura"
+        wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura",
+        history: "A Happy Pancake (Shiawase no Pancake) started in Omotesando, Tokyo, and quickly became a national sensation. Their Shinsaibashi location serves as a flagship for their fluffy, soufflé-style pancakes that have defined a new era of Japanese dessert culture."
       },
       {
         time: "12:30 pm",
@@ -112,7 +118,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6715, lng: 135.4987 },
         tourismUrl: "https://amerikamura.jp/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura"
+        wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura",
+        history: "Amerikamura (American Village) emerged in the 1970s when warehouses were converted into shops selling imported American goods. It has since become Osaka's center for youth fashion and alternative culture."
       },
       {
         time: "01:30 pm",
@@ -123,7 +130,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6654, lng: 135.5061 },
         tourismUrl: "https://kuromon.com/en/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Kuromon_Ichiba_Market"
+        wikiUrl: "https://en.wikipedia.org/wiki/Kuromon_Ichiba_Market",
+        history: "Kuromon Market started in 1902. It was originally called Enmyoji Market because of a nearby temple with a black gate ('Kuromon')."
       },
       {
         time: "03:30 pm",
@@ -133,7 +141,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6711, lng: 135.5014 },
         tourismUrl: "https://www.japan-guide.com/e/e4002.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Shinsaibashi"
+        wikiUrl: "https://en.wikipedia.org/wiki/Shinsaibashi",
+        history: "Shinsaibashi is named after the Shinsaibashi Bridge, built in 1622. The shopping arcade has been a commercial destination for nearly 400 years, evolving from traditional kimono shops to modern department stores."
       },
       {
         time: "06:00 pm",
@@ -142,17 +151,20 @@ export const itinerary: DayPlan[] = [
         mapUrl: "https://maps.google.com/?q=Yakiniku+M+Hozenji",
         imageUrl: "https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 34.6684, lng: 135.5028 },
-        tourismUrl: "https://www.m-kyoto.jp/hozenji_hanare/"
+        tourismUrl: "https://www.m-kyoto.jp/hozenji_hanare/",
+        history: "Yakiniku M Hozenji is located near the historic Hozenji Temple. The area is famous for its moss-covered Fudo Myoo statue and its narrow, atmospheric stone-paved alleys that evoke the feeling of old Osaka."
       },
       {
         time: "08:00 pm",
-        title: "Dotonbori + Bar Hopping",
-        description: "The heart of Osaka's nightlife. Move around and don't get stuck in one place. Fun Fact: The Glico Running Man sign has been a Dotonbori landmark since 1935!",
-        mapUrl: "https://maps.google.com/?q=Dotonbori",
-        imageUrl: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80",
-        coordinates: { lat: 34.6687, lng: 135.5013 },
-        tourismUrl: "https://www.japan-guide.com/e/e4001.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Dotonbori"
+        title: "Den Den Town Exploration",
+        description: "Osaka's answer to Akihabara. Perfect for tech, anime, and retro games. Fun Fact: The name 'Den Den' comes from 'Denki no machi' (Electric Town).",
+        mapUrl: "https://maps.google.com/?q=Den+Den+Town",
+        details: ["Super Potato for retro games", "Animate for anime goods", "Gachapon halls"],
+        imageUrl: "https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6595, lng: 135.5058 },
+        tourismUrl: "https://osaka-info.jp/en/spot/den-den-town/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Nipponbashi",
+        history: "Nipponbashi (Den Den Town) has been a commercial hub since the Edo period. After WWII, it transformed into a major center for radio and electronics parts, eventually evolving into the otaku and tech paradise it is today."
       }
     ]
   },
@@ -188,7 +200,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1555681962-37b0c334ad62?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6595, lng: 139.7005 },
         tourismUrl: "https://www.japan-guide.com/e/e3007.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Shibuya_Crossing"
+        wikiUrl: "https://en.wikipedia.org/wiki/Shibuya_Crossing",
+        history: "Shibuya Crossing is the world's busiest pedestrian crossing. It has been a symbol of Tokyo's modernization since the Shibuya Station opened in 1885."
       },
       {
         time: "05:30 pm",
@@ -234,7 +247,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6764, lng: 139.6993 },
         tourismUrl: "https://www.japan-guide.com/e/e3002.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Meiji_Shrine"
+        wikiUrl: "https://en.wikipedia.org/wiki/Meiji_Shrine",
+        history: "Dedicated to Emperor Meiji and Empress Shoken, the shrine was completed in 1920. It was destroyed during WWII but rebuilt in 1958 with donations from the public."
       },
       {
         time: "Early Afternoon",
@@ -291,7 +305,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.7148, lng: 139.7967 },
         tourismUrl: "https://www.japan-guide.com/e/e3001.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Sens%C5%8D-ji"
+        wikiUrl: "https://en.wikipedia.org/wiki/Sens%C5%8D-ji",
+        history: "Senso-ji is Tokyo's oldest temple, founded in 628 AD. Legend says two brothers found a statue of Kannon in the Sumida River and the temple was built to honor her."
       },
       {
         time: "10:30 am",
@@ -301,7 +316,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1584464431734-793549667793?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.7118, lng: 139.7965 },
         tourismUrl: "https://www.japan-guide.com/e/e3004.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Asakusa"
+        wikiUrl: "https://en.wikipedia.org/wiki/Asakusa",
+        history: "Asakusa was Tokyo's leading entertainment district for centuries. During the Edo period, it was the site of the city's largest pleasure district and remains a place where the atmosphere of 'Old Tokyo' is most palpable."
       },
       {
         time: "12:30 pm",
@@ -310,7 +326,8 @@ export const itinerary: DayPlan[] = [
         mapUrl: "https://maps.google.com/?q=Daikokuya+Tempura",
         imageUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.7125, lng: 139.7958 },
-        tourismUrl: "http://www.tempura.co.jp/english/"
+        tourismUrl: "http://www.tempura.co.jp/english/",
+        history: "Daikokuya Tempura has been serving its signature tempura since 1887. They are famous for their dark, rich sauce and traditional cooking methods that have remained unchanged for over a century."
       },
       {
         time: "03:00 pm",
@@ -320,7 +337,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6984, lng: 139.7731 },
         tourismUrl: "https://www.japan-guide.com/e/e3003.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Akihabara"
+        wikiUrl: "https://en.wikipedia.org/wiki/Akihabara",
+        history: "Akihabara gained its nickname 'Electric Town' after WWII when it became a major center for surplus radio parts. It later evolved into the global hub for anime, manga, and video game culture."
       },
       {
         time: "09:00 pm",
@@ -330,7 +348,8 @@ export const itinerary: DayPlan[] = [
         details: ["No strict plan — best night of trip", "Jump bar to bar", "Start near hotel, then drift"],
         imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6938, lng: 139.7035 },
-        tourismUrl: "https://ameblo.jp/hiroyasu-kayama/"
+        tourismUrl: "https://ameblo.jp/hiroyasu-kayama/",
+        history: "Shinjuku's nightlife districts like Kabukicho and Golden Gai developed in the post-war era. Kabukicho was named after a theater that was never built, but the area instead grew into Japan's largest red-light and entertainment district."
       }
     ]
   },
@@ -348,7 +367,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6491, lng: 139.7898 },
         tourismUrl: "https://planets.teamlab.art/tokyo/",
-        wikiUrl: "https://en.wikipedia.org/wiki/TeamLab"
+        wikiUrl: "https://en.wikipedia.org/wiki/TeamLab",
+        history: "teamLab is an international art collective formed in 2001. teamLab Planets opened in Toyosu in 2018 as a temporary exhibition but has become a permanent fixture due to its popularity."
       },
       {
         time: "12:00 pm",
@@ -358,7 +378,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1534251369789-5067c8b8602a?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6655, lng: 139.7707 },
         tourismUrl: "https://www.japan-guide.com/e/e3021.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Tsukiji_Outer_Market"
+        wikiUrl: "https://en.wikipedia.org/wiki/Tsukiji_Outer_Market",
+        history: "Tsukiji was built on reclaimed land in the 17th century. The wholesale market moved to Toyosu in 2018, but the outer market remains a vital part of Tokyo's food culture, serving as the city's 'public kitchen' for over 80 years."
       },
       {
         time: "02:00 pm",
@@ -367,7 +388,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1480796275306-24d9942a14fe?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.6717, lng: 139.7650 },
         tourismUrl: "https://www.japan-guide.com/e/e3005.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Ginza"
+        wikiUrl: "https://en.wikipedia.org/wiki/Ginza",
+        history: "Ginza has been Tokyo's most glamorous shopping district for over a century. After a massive fire in 1872, it was rebuilt with brick buildings in a Western style, making it a symbol of Japan's 'civilization and enlightenment'."
       },
       {
         time: "06:30 pm",
@@ -378,7 +400,8 @@ export const itinerary: DayPlan[] = [
         imageUrl: "https://images.unsplash.com/photo-1570160897040-30430ef2015a?auto=format&fit=crop&w=800&q=80",
         coordinates: { lat: 35.5494, lng: 139.7798 },
         tourismUrl: "https://tokyo-haneda.com/en/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Haneda_Airport"
+        wikiUrl: "https://en.wikipedia.org/wiki/Haneda_Airport",
+        history: "Haneda Airport opened in 1931. It was Tokyo's primary international airport until Narita opened in 1978. In recent years, it has regained its status as a major international hub, praised for its efficiency and proximity to the city center."
       }
     ]
   }
