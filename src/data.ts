@@ -99,32 +99,45 @@ export const itinerary: DayPlan[] = [
         history: "While the shrine's origins are ancient, the famous lion head stage was built in 1974. It stands 12 meters tall and is a symbol of Namba's unique character."
       },
       {
-        time: "11:00 am",
+        time: "11:30 am",
         title: "A Happy Pancake (Amerikamura)",
-        description: "The perfect 'late breakfast'. These soufflé pancakes are legendary. Fun Fact: They open at 10:00 AM or 11:00 AM depending on the day, so 11:00 AM is the sweet spot to catch them fresh!",
+        description: "The perfect 'late breakfast'. These soufflé pancakes are legendary. Fun Fact: The pancakes are so fluffy they take about 20 minutes to cook, but they're worth every second!",
         mapUrl: "https://maps.google.com/?q=A+Happy+Pancake+Shinsaibashi",
         details: ["Order the 'Happy Pancake' (original)", "Expect a 20-30 min wait"],
-        imageUrl: "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://magia.tokyo/wp-content/themes/pc/images/slider_cover.png",
         coordinates: { lat: 34.6715, lng: 135.4987 },
         tourismUrl: "https://magia.tokyo/shop/shinsaibashi",
         wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura",
         history: "A Happy Pancake (Shiawase no Pancake) started in Omotesando, Tokyo, and quickly became a national sensation. Their Shinsaibashi location serves as a flagship for their fluffy, soufflé-style pancakes that have defined a new era of Japanese dessert culture."
       },
       {
-        time: "12:30 pm",
-        title: "Amerikamura Exploration",
-        description: "Walk through the 'Triangle Park' and check out the vintage shops. Fun Fact: This area has been the center of Osaka's youth culture since the 1970s.",
-        mapUrl: "https://maps.google.com/?q=Amerikamura",
-        imageUrl: "https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&w=800&q=80",
-        coordinates: { lat: 34.6715, lng: 135.4987 },
-        tourismUrl: "https://amerikamura.jp/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Amerikamura",
-        history: "Amerikamura (American Village) emerged in the 1970s when warehouses were converted into shops selling imported American goods. It has since become Osaka's center for youth fashion and alternative culture."
+        time: "02:00 pm",
+        title: "Pokemon Center Osaka DX",
+        description: "Located in Daimaru Shinsaibashi. Fun Fact: This location features a life-sized legendary Pokemon statue and a dedicated Pokemon Cafe!",
+        mapUrl: "https://maps.google.com/?q=Pokemon+Center+Osaka+DX",
+        details: ["Check out the exclusive merch", "Located in Daimaru building"],
+        imageUrl: "https://images.unsplash.com/photo-1613771404721-1f92d799e49f?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6734, lng: 135.5008 },
+        tourismUrl: "https://www.pokemon.co.jp/gp/pokecen/osakadx/",
+        wikiUrl: "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Center",
+        history: "The Pokemon Center Osaka DX opened in 2019. It is one of the largest in Japan and serves as a major hub for fans in the Kansai region."
       },
       {
-        time: "01:30 pm",
-        title: "Kuromon Market",
-        description: "Switch to savory! A snack crawl through 'Osaka's Kitchen'. Fun Fact: Many of the shops here have been family-run for over three generations.",
+        time: "03:30 pm",
+        title: "Shinsaibashi to Dotonbori Walk",
+        description: "Walk through the iconic covered shopping street all the way to the Glico Man. Fun Fact: Shinsaibashi-suji has been a shopping destination for over 380 years!",
+        mapUrl: "https://maps.google.com/?q=Dotonbori+Glico+Sign",
+        details: ["Photo with Glico Man", "Cross the Ebisubashi Bridge"],
+        imageUrl: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6687, lng: 135.5013 },
+        tourismUrl: "https://www.japan-guide.com/e/e4001.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/D%C5%8Dtonbori",
+        history: "Dotonbori dates back to 1612 when a local merchant, Yasui Doton, began expanding the Umezu River into a canal. It later became Osaka's premier theater and entertainment district."
+      },
+      {
+        time: "04:30 pm",
+        title: "Kuromon Ichiba Market",
+        description: "The 'Kitchen of Osaka'. A short walk from Dotonbori. Fun Fact: You can find everything from fresh sea urchin to expensive white strawberries here!",
         mapUrl: "https://maps.google.com/?q=Kuromon+Market",
         details: ["Wagyu skewers", "Fresh scallops"],
         imageUrl: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=800&q=80",
@@ -134,18 +147,19 @@ export const itinerary: DayPlan[] = [
         history: "Kuromon Market started in 1902. It was originally called Enmyoji Market because of a nearby temple with a black gate ('Kuromon')."
       },
       {
-        time: "03:30 pm",
-        title: "Shinsaibashi-suji Shopping",
-        description: "Walk off the food in the massive covered arcade. Fun Fact: Shinsaibashi-suji is one of the oldest and most representative shopping centers in Japan.",
-        mapUrl: "https://maps.google.com/?q=Shinsaibashi-suji",
-        imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
-        coordinates: { lat: 34.6711, lng: 135.5014 },
-        tourismUrl: "https://www.japan-guide.com/e/e4002.html",
-        wikiUrl: "https://en.wikipedia.org/wiki/Shinsaibashi",
-        history: "Shinsaibashi is named after the Shinsaibashi Bridge, built in 1622. The shopping arcade has been a commercial destination for nearly 400 years, evolving from traditional kimono shops to modern department stores."
+        time: "05:30 pm",
+        title: "Den Den Town (Nipponbashi)",
+        description: "Walk to Osaka's anime and electronics hub. Fun Fact: Den Den Town is famous for its 'Street Festa' cosplay parade, one of the largest in Japan!",
+        mapUrl: "https://maps.google.com/?q=Den+Den+Town",
+        details: ["Retro gaming at Super Potato", "Gachapon halls"],
+        imageUrl: "https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=800&q=80",
+        coordinates: { lat: 34.6596, lng: 135.5059 },
+        tourismUrl: "https://www.japan-guide.com/e/e4006.html",
+        wikiUrl: "https://en.wikipedia.org/wiki/Den_Den_Town",
+        history: "Den Den Town gained its name from 'Denki no machi' (Electric Town). It evolved from a post-war radio parts market into a global destination for subculture fans."
       },
       {
-        time: "06:00 pm",
+        time: "07:30 pm",
         title: "Booked Yakiniku Dinner",
         description: "Enjoy high-quality grilled meat at Yakiniku M Hozenji. Fun Fact: Matsusaka beef is one of the 'Big Three' Wagyu beef types in Japan.",
         mapUrl: "https://maps.google.com/?q=Yakiniku+M+Hozenji",
@@ -153,18 +167,6 @@ export const itinerary: DayPlan[] = [
         coordinates: { lat: 34.6684, lng: 135.5028 },
         tourismUrl: "https://www.m-kyoto.jp/hozenji_hanare/",
         history: "Yakiniku M Hozenji is located near the historic Hozenji Temple. The area is famous for its moss-covered Fudo Myoo statue and its narrow, atmospheric stone-paved alleys that evoke the feeling of old Osaka."
-      },
-      {
-        time: "08:00 pm",
-        title: "Den Den Town Exploration",
-        description: "Osaka's answer to Akihabara. Perfect for tech, anime, and retro games. Fun Fact: The name 'Den Den' comes from 'Denki no machi' (Electric Town).",
-        mapUrl: "https://maps.google.com/?q=Den+Den+Town",
-        details: ["Super Potato for retro games", "Animate for anime goods", "Gachapon halls"],
-        imageUrl: "https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=800&q=80",
-        coordinates: { lat: 34.6595, lng: 135.5058 },
-        tourismUrl: "https://osaka-info.jp/en/spot/den-den-town/",
-        wikiUrl: "https://en.wikipedia.org/wiki/Nipponbashi",
-        history: "Nipponbashi (Den Den Town) has been a commercial hub since the Edo period. After WWII, it transformed into a major center for radio and electronics parts, eventually evolving into the otaku and tech paradise it is today."
       }
     ]
   },
